@@ -1,0 +1,59 @@
+/* 멀티태스킹 : 스레드 라이프 사이클
+ * => 생명주기
+ *             start()             sleep(),wait()
+ * new Thread() ----> Runnable 상태 ----> Not Runnable 상태
+ *                           |      <----
+ *                           |  timeout, nofify()
+ *                           |실행완료
+ *                         dead
+ * => Runnable 상태
+ *  - CPU 쟁탈전에 놓인 상태
+ *  - CPU를 받을 수 있는 상태
+ *  - Runnable 상태에 있는 스레드 CPU를 사용하여 실행한다.
+ * => Not Runnable 상태
+ *  - CPU 쟁탈전에서 제외된  상태
+ *  - CPU를 받을 수 없는 상태
+ * => 실행이 완료되면 Dead 상태가 되어 다시는 실행할 수 없다.
+ *  반복 실행 할 수 없다.
+ **/
+package step19;
+
+public class Test07 {
+
+
+  static class Dog extends Thread{
+    public void run(){
+      try{
+        this.wait(); //현재 스레드를 Not Runnable 상태로 바꾼다.
+                     // 다른 스레드가 알려줄 때까지 (notify())
+      } catch(Exception e){
+        e.printStackTrace();
+      }
+      System.out.println("싸우자! 멍!");
+      
+    }
+  }
+  
+  static class Thief extends Thread {
+    int length = 100;
+    
+    public void run(){
+      while(true){
+        length -= 10; 
+        if(length ==0){
+          this.notifyAll();
+        }
+        try{
+          Thread.sleep(1000);
+        }catch (Exception e){}
+      }
+    }
+  }
+  
+  public static void main(String[] args) {
+    Dog dog = new Dog();
+    dog.start();
+    
+    System.out.println("보안 장치 작동");
+  }
+}

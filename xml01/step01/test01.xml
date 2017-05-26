@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--XML (Extensivle Markup Language)
+  => 구조를 갖춘 데이터를 표현하기 위해 만들어진 형식이다.
+  => 애플리케이션 간에 데이터를 교환하는 용도이다.
+
+  XML 문서 작성 규칙
+  1) XML 선언부
+  =>선언부 앞에 어떤 값도 와서는 안된다.
+
+  2) XML 문서형식
+  => XML 문서에 루트 태그와 DTD 정보를 선언한다.
+  <!DOCTYPE 루트태그명 PUBLIC/SYSTEM "공인이름" "DTD URL">
+  =>DTD를 지정하는 것은 생략 할 수 있다.
+  =>XML 문서 형식을 생략하게 되면 DTD규칙을 검사하지 않고, ~~
+
+  3) XML 태그 선언
+  => XML 아름 짓는 규칙에 따라 태그를 선언한다.
+  => 만약 DTD를 지정하게 되면 그 DTD 규칙에 따라 태그를 사용해야 한다.
+
+
+ -->
+
+ <!-- 장점
+    => 태그를 사용하여 쉽게 알아 볼 수 있음
+    => 특정 데이터 출력이 쉬움
+    => 태그와 태그는 포함관계로 표현
+    => 데이터를 개별적으로 관리하고 구분이 쉬움
+    => XML 태그는 텍스트로 작성한다
+    => 전용 프로그램만 사용가능
+
+    1) 바이너리 vs  텍스트
+    =>일단 텍스트 편집기로(메모장, vi editor) 편집 할 수 없는 데이터
+    => 예) .jpeg, .gif, .avi, .hwp, .xls, .ppt, .doc
+    2) 텍스트 데이터
+    => 일반 텍스트 편집기로 편집해도 되는 데이터
+    => 예) .js, .html, .xml, .json
+  -->
+<students>
+  <student>
+    <name>홍길동</name>
+    <tel>1111-2222</tel>
+    <email>hong@test.com</email>
+  </student>
+  <student>
+    <name>임꺽정</name>
+    <tel>1111-3333</tel>
+    <email>leem@test.com</email>
+  </student>
+
+</students>

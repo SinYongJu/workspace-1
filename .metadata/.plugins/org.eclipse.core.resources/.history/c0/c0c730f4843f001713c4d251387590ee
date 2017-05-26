@@ -1,0 +1,39 @@
+package step19;
+
+public class Test01 {
+  public static void main(String[] args) {
+    Thread t = Thread.currentThread();
+    System.out.println(t.getName());
+    
+    ThreadGroup g = t.getThreadGroup();
+    System.out.println(g.getName());
+    
+    ThreadGroup g2 = g.getParent();
+    System.out.println(g2.getName());
+    
+    ThreadGroup g3 = g2.getParent();
+//    System.out.println(g3.getName());
+    
+    //system 하위 thread 그룹
+    System.out.println("sys-----------------------");
+    printThreadGroup(g2,"  ");
+    
+    // "system" 그룹의 소속되어 있는 스레드들
+  }
+  
+  public static void printThreadGroup(ThreadGroup tg, String prefix){
+    System.out.printf("%s TG '%s'\n",prefix ,tg.getName());
+    ThreadGroup[] grouparray = new ThreadGroup[10];
+    int count = tg.enumerate(grouparray, false);
+    
+    for(int i = 0; i < count; i++){
+      System.out.printf("%sTG '%s'\n",prefix ,grouparray[i].getName());
+    }
+    Thread[] threadArray = new Thread[10];
+    count = tg.enumerate(threadArray, false);
+    for(int i = 0; i < count; i++){
+      System.out.printf("%s-- '%s'\n",prefix ,threadArray[i].getName());
+    }
+  }
+  
+}

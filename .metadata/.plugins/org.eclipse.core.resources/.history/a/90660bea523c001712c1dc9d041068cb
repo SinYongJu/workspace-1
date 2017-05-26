@@ -1,0 +1,30 @@
+/* File I/O - 바이너리 스트림 클래스 - ByteArrayOutputStream
+ * =>  
+ */
+package step16;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test03_1_out {
+
+  public static void main(String[] args) throws Exception{
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    
+    // 이 출력 스트림 클래스는 파일이 아니라 내부에서 따로 관리하는
+    // 바이트 배열 메모리로 출력한다.
+    out.write(0x66778899);
+    out.write(0x77665544);
+    out.write(0x12345678);
+    
+    // 이 출력 스트림 객체가 관리하는 바이트 배열 얻기
+    byte[] buf = out.toByteArray();
+    
+    for(byte b : buf){
+      System.out.printf("%x ", b);
+    }
+    
+    out.close();
+  }
+}

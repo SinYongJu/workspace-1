@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>타자게임</title>
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+          >
+    <style>
+      div {
+        padding: 5px;
+      }
+
+      #con {
+        text-align: center;
+        font-size: 25px;
+        padding: 5px;
+        margin: 20px;
+        width: 350px;
+        background-color: lightyellow;
+
+      }
+
+      #view {
+          height: 60px;
+          font-size: 50px;
+      }
+
+      #time {
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      #taza {
+        font-size: 35px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <div>
+        <span id="taza">타자게임</span>
+      </div>
+      <div>
+        <span>단어수: </span>
+        <span id="word-count">0</span>
+        <span>성공 : </span>
+        <span id="success">0</span>
+        <span>실패 : </span>
+        <span id="fail">0 </span>
+      </div>
+      <div id="view">
+        <span id="word">컴퓨터</span>
+      </div>
+      <div id="time">
+        <span>남은시간 : </span>
+        <span id="remain-time"></span>
+      </div>
+      <input type="text" id="input-Text" class="form-control" onkeydown="enter()">
+    </div>
+  </body>
+
+  <script type="text/javascript">
+
+  window.$ = window.jQuery = require('jquery')
+
+  var word = $("#word");
+  var wordCount = $("#word-count");
+  var success = $("#success");
+  var fail = $("#fail");
+  var inputText = $("#input-Text");
+  var remainTime = $("#remain-time");
+  var total=0, collect=0, lose=0;
+  var time = 30;
+  var wo = [];
+  timeover;
+  document.getElementById("input-Text").focus();
+
+  $.getJSON( "word.json", function( data ) {
+    for (var i in data.words) {
+      wo[i]  = data.words[i]
+    }
+  });
+
+  var timeover = setInterval(function () {
+    remainTime.text(time--);
+    if(time == -1){
+      clearInterval(timeover);
+      alert("Game Over");
+    }
+  },1000)
+
+  function  enter() {
+    if(event.keyCode == 13){
+      if(word.text() == inputText.val()){
+        success.text(++collect);
+        wo.splice(0 ,1)
+        console.log(wo);
+        randomwords();
+
+        if(collect == 30){
+          clearInterval(timeover);
+          alert("Game Clear");
+        }
+      }
+      else {
+        fail.text(++lose);
+        wo.push(wo[0])
+        wo.splice(0 ,1)
+        console.log(wo);
+        randomwords();
+      }
+    }
+  }
+
+  function randomwords() {
+    inputText.val("");
+    wordCount.text(++total);
+    word.text(wo[0])
+  }
+  </script>
+</html>

@@ -1,0 +1,52 @@
+/* 소켓 프로그래밍 : Echo 클라이언트 만들기
+ * */
+package step18;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.Socket;
+
+public class Test06_2 {
+  public static void main(String[] args) throws Exception {
+    if(args.length < 1){
+      System.out.println("[사용법] > java -cp bin step18.Test06_2 서버포트 메세지");
+      return;
+    }
+    try(
+    Socket socket = new Socket(args[0], Integer.parseInt(args[1]));
+    Scanner in = new Scanner(new InputStreamReader(socket.getInputStream()));
+    PrintStream out = new PrintStream(new BufferedOutputStream(socket.getOutputStream()));){    
+     
+      // HTTP 서버에게 요청 데이터를 보낸다.
+      //1) request line - 예) GET/test/ok/index.html HTTP/1.1 CRLF
+      out.printf("GET %s HTTP/1.1\n",path);
+      
+      //2) header(general + request + entity) - 예) Host : www.daum.net
+      // => 최소 Host 헤더 데이터를 보내야 한다.
+      out.printf("Host: %s\n", host);
+      
+      //3) 요청 데이터의 끝을 의미하는 줄 바꿈 코드를 보낸다.
+      out.println();
+      out.flush();
+      String str = null;
+      while (true) {
+        str= in.readLine();
+        System.out.println(str);
+        if(str.length() == 0) {
+          break;
+        }
+      }
+      
+      int ch;
+      while ((ch = in.read()) != -1) {
+        System.out.print((char)ch);
+      }
+      
+      // [HTTP 서버가 응답한 데이터를 읽는다.
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}

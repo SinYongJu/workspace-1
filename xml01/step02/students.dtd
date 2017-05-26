@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % coreattr
+"id ID #REQUIRED
+name CDATA #REQUIRED">
+<!ELEMENT students (class+,student+,loc+)>
+<!ELEMENT student EMPTY>
+<!ELEMENT class EMPTY>
+<!ELEMENT loc EMPTY>
+
+<!ATTLIST class
+  %coreattr;
+>
+
+<!ATTLIST student
+  %coreattr;
+  email CDATA #IMPLIED
+  cid IDREF #REQUIRED
+>
+
+<!ATTLIST loc
+  %coreattr;
+  classes IDREFS #REQUIRED
+>

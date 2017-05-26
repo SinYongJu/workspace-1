@@ -1,0 +1,90 @@
+body {
+  font-family: '맑은 고딕', 굴림체, 'Apple SD Gothic Neo', sans-serif;
+  font-size: medium;
+  margin: 0px;
+}
+
+address {
+  display: inline;
+  font-style: normal;
+  position:
+}
+
+#bitcamp {
+  background-color: gray;
+  color: white;
+  border-radius: 4px;
+  padding: 3px 3px 0px 3px;
+}
+
+#company {
+  color: navy;
+}
+
+#menu {
+  background-color: lightgray;
+  font-size: 1.2em;
+  width: 180px;
+  position: absolute;
+}
+
+#menu ul > li {
+  font-weight: bold;
+}
+
+#menu ol {
+  font-weight: normal;
+}
+
+#content {
+  font-family: 바탕체, 궁서체, AppleMyungjo, serif;
+  margin-left: 195px;
+  min-height: 530px;
+}
+
+#footer {
+  clear: left;
+  font-size: 80%; /* = 0.8em */
+  margin-right: 20px;
+  text-align: center;
+}
+
+#footer > p {
+  font-style: italic;
+}
+
+#ad{
+  position: fixed;
+  left:35%;
+  top:20%;
+  border: 5px solid orange;
+}
+
+#ad > button{
+  background-color: red;
+  color: white;
+  border-style: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor:pointer;
+}
+/*
+#menu > img{
+  position: relative;
+  left: 50px;
+  top: 10px;
+}*/
+
+#ad > img:last-child{
+  position: relative;
+  left: 10px;
+  top: 20px;
+}
+
+#main{
+  position: relative;
+  /*border: 1px solid green;*/
+  width: 980px;
+  margin: 0px auto;
+}

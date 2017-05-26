@@ -1,0 +1,20 @@
+r<?xml version="1.0"?>
+<!-- XML 선언부에서 encoding standalone 생략가능 -->
+<!-- 용어정리
+  <students version="1.0"> <== 시작태그
+  </students> <== 끝태그
+  내용... <== 시작태그와 끝에 있는 모든내용
+
+  시작태그 + 내용 + 끝태그 = "엘리먼트"라고 부른다.
+  그러나 실무에서는 엘리먼트와 태그를 구분하지 않고 혼용해서 사용
+
+  version ="1.0" <== students 태긔의 "속성"이라 부른다.
+  속성의 값은 큰따옴표("") 또는 작음따옴표('')로 감싸서 표현한다.
+-->
+<students version="1.0"> <!-- student 태그의 부모 태그라 부른다. -->
+  <student><!-- 이 태그를 기준으로 삼는다면 -->
+    <name>홍길동</name> <!-- sutdent 태그의 자식 태그라 부른다. -->
+    <tel>1111-2222</tel>
+    <email>hong@test.com</email>
+  </student>
+</students>

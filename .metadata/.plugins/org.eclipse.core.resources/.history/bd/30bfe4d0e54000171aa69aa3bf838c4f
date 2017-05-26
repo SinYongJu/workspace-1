@@ -1,0 +1,7 @@
+"use strict"
+const net = require('net')
+window.$ = window.jQuery = require("jQuery");
+
+$('#send').click(() = > {
+	alert('ok')
+})

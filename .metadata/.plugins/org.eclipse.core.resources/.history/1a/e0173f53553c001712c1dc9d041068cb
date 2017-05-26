@@ -1,0 +1,52 @@
+/* File I/O - 바이너리 스트림 클래스 - ByteArrayOutputStream
+ * =>  
+ */
+package step16;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test03_2 {
+
+  public static void main(String[] args) throws Exception{
+    ByteArrayOutputStream out = new ByteArrayOutputStream();
+  
+    byte b = 0x11;
+    short s = 0x2233;
+    int i = 0x44556677;
+    String str =  "ABC가각간";
+    
+    out.write(b);
+   
+    out.write(s >> 8);
+    out.write(s);
+    
+    out.write(i >> 24);
+    out.write(i >> 16);
+    out.write(i >> 8);
+    out.write(i);
+    
+    byte[] bytes = str.getBytes("UTF-8");
+    int len = bytes.length;
+    out.write(len >> 8);
+    out.write(len);
+    out.write(bytes);
+    
+    byte[] buf = out.toByteArray();
+    out.close();
+    
+    
+    ByteArrayInputStream in = new ByteArrayInputStream(buf);
+    int c = 0;
+    
+    while(true){
+      c = in.read();
+      if(c== -1)
+        break;
+      System.out.printf("%x ", c);
+    }
+    in.close();
+  }
+}

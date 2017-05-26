@@ -1,0 +1,10 @@
+<!ENTITY  % addr "addr CDATA #REQUIRED">
+<!ELEMENT stdents (student+)>
+<!ELEMENT student EMPTY>
+
+<!ATTLIST student
+  sid ID #REQUIRED
+  email CDATA #IMPLIED
+  national CDATA #FIXED "KOREA"
+  %addr;
+>

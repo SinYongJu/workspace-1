@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+
+  </style>
+</head>
+  <body>
+
+  <script type="text/javascript">
+    var v1 = 100;
+    window.v2 =200;
+
+    function f1() {
+      console.log('f1().... 함수 호출됨');
+    }
+    window.f2 = function () {
+      console.log("f2().... 함수 호출됨");
+    }
+
+    console.log(window.v1, window.v2);
+    console.log(v1, v2); // window생략가능
+
+    f1();
+    window.f1();
+    f2();
+    window.f2();
+
+    console.log('---------------------------------');
+    console.log(window.document);
+    console.log('---------------------------------');
+    console.log(window.navigator);
+    console.log('---------------------------------');
+    console.log(window.screen);
+    console.log(screen.width, screen.height);
+    console.log('---------------------------------');
+    console.log(window.location);
+    // location.href = 'http://www.daum.net'
+    console.log('---------------------------------');
+    console.log(window.history);
+    console.log('---------------------------------');
+
+
+  </script>
+
+
+  </body>
+</html>

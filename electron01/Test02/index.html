@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+          href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+          >
+    <!-- <link rel="stylesheet" href="animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <title>타자게임</title>
+    <style media="screen">
+      #con {
+        width: 350px;
+        border-radius: 5px;
+        height: 300px;
+        border: 1px solid black;
+        text-align: center;
+        background: lightyellow;
+        padding: 5px;
+
+        background-size: 350px 300px;
+      }
+
+      #game {
+      color: black;
+      text-shadow: 2px 4px 2px gray;
+      font-size: 60px;
+      margin-top: 50px;
+      }
+
+      #start {
+        margin-top: 80px;
+        margin-left: 200px;
+        height: 60px;
+        width: 120px;
+        font-size: 20px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="con">
+      <h1 id="game">타자게임!</h1>
+      <button type="button" onclick="location.href='./main.html'" class="btn btn-default" name="button" id="start">시작하기</button>
+    </div>
+  </body>
+<script type="text/javascript">
+window.$ = window.jQuery = require('jquery')
+$('#game').addClass('animated bounce');
+</script>
+</html>

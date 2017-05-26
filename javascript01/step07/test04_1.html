@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+<style>
+  div{
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .child{
+    border: 5px solid gray;
+    width: 100px;
+    height: 20px;
+  }
+</style>
+</head>
+<body>
+
+<button id= 'btn1' type="button">태그삭제</button>
+<div id="d1">
+  <div id="c1" class='child'>자식1</div>
+  <div id="c2" class='child'>자식1</div>
+  <div id="c3" class='child'>자식1</div>
+  <div id="c4" class='child'>자식1</div>
+  <div id="c5" class='child'>자식1</div>
+  <div id="c6" class='child'>자식1</div>
+</div>
+
+<script type="text/javascript">
+//DOM (Document Object Model)  tree
+//Render Tree
+
+var d1 = document.querySelector("#d1");
+var btn1 = document.querySelector("#btn1");
+
+btn1.addEventListener("click",function () {
+  var c1 = document.querySelector('#c1');
+  d1.removeChild(d1.lastChild);
+})
+
+</script>
+
+
+</body>
+</html>

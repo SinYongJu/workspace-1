@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+
+  @font-face{
+    font-family: "myfont";
+    src: url('icons.woff') format('woff');
+  }
+  div {
+    padding: 5px;
+  }
+
+  #email {
+    padding-right: 20px;
+  }
+
+  #state {
+    font-family: myfont;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+  }
+
+  /*#state:before{
+    content: '\f056';
+  }*/
+
+/*  background: no-repeat -204px -1px;  x좌표*/
+  </style>
+</head>
+<body>
+<form>
+<div>이메일: <input id="email" type="text">
+  <div id="state"></div></div>
+<div>암호: <input id="pwd" type="password"></div>
+<div><button id="signupBtn" type="button">회원가입</button></div>
+</form>
+
+<script type="text/javascript">
+  var email = document.getElementById('email');
+  var btn = document.getElementById('signupBtn');
+  var state = document.getElementById('state');
+
+  btn.addEventListener('click', function() {
+
+    if (email.value == "hong@test.com") {
+      state.innerHTML = "&#61452;";
+      state.style['color'] = "#f00";
+    }
+    else {
+      state.innerHTML = "&#61453;";
+      state.style.color = "#00f";
+    }
+  })
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- -->

@@ -1,0 +1,26 @@
+/* 데이터 프로세싱 스트림 클래스 - BufferedInputStream 도입전 II
+ * => 버퍼를 이용하여 출력 속도향상 
+ *  */
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test04_2_out {
+
+  public static void main(String[] args) throws Exception{
+    FileOutputStream out = new FileOutputStream("temp/test04_1.data");
+    
+    long start = System.currentTimeMillis();
+   
+    for (int i = 0;i < 4000000; i++){
+      out.write(i);
+      if((i %10000)== 0 )System.out.print(".");
+      if((i %500000)== 0 )System.out.println();
+      
+    }
+   
+   long end =System.currentTimeMillis();
+   System.out.printf("\n"+ "걸린시간 %d",end - start);
+  }
+}

@@ -1,0 +1,45 @@
+/* File I/O - 바이너리 스트림 클래스 
+ * =>  다양한 Stream을 상속 받아 다양한 타입의 데이터를 읽고 쓰도록 기능을 추가
+ */
+package step16;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test03_3 {
+
+  public static void main(String[] args) throws Exception{
+    MyArrayOutputStream out = new MyArrayOutputStream();
+  
+    byte b = 0x11;
+    out.writeByte(b);
+   
+    short s = 0x2233;
+    out.writeShort(s);
+    
+    int i = 0x44556677;
+    out.writeInt(i);
+    
+    String str =  "ABC가각간";
+    out.writeUTF(str);
+    
+    byte[] buf = out.toByteArray();
+    out.close();
+    
+    
+    MyArrayInputStream in = new MyArrayInputStream(buf);
+  
+    byte b2 = in.readByte();
+    
+    short s2 = in.readShort();
+    
+    int i2 = in.readInt();
+    
+  
+    String len2 = in.readUTF();
+    in.close();
+    System.out.printf("%x %x %x %s\n",b2,s2,i2,str2);
+  }
+}

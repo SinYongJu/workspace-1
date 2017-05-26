@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Test03&apos;&#x0D;&#x0A;- Original project: &apos;electron01&apos;&#x0D;&#x0A;- Destination element: &apos;Test03&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     main.js&#x0D;&#x0A;     package.json&#x0D;&#x0A;     index.html" description="Copy files" element1="test01/main.js" element2="test01/package.json" element3="test01/index.html" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1495085882542" target="/electron01/Test03" units="0" version="1.0"/>
+</session>

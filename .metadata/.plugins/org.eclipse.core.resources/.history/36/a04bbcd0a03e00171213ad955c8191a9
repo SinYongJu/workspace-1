@@ -1,0 +1,14 @@
+/* 데이터 프로세싱 스트림 클래스 - BufferedInputStream 도입 후
+ * => 출력할 데이터를 먼저 버퍼에 출력한다.
+ * 퍼버가 꽉차면 비로소 파일로 출력한다.
+ * 
+ */
+package step16;
+
+public class Test05_1_out {
+  
+  
+  public static void main(String[] args) throws Exception{
+    Student s = new Student("홍길동",100,90,80,false);
+  }
+}

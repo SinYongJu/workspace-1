@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+
+</head>
+<body>
+
+<button id= 'btn1' type="button" onclick="console.log('zzzzzzzzzzzz'))">버튼1</button>
+
+<script type="text/javascript">
+//DOM (Document Object Model)  tree
+//Render Tree
+
+var btn1 = document.querySelector("#btn1");
+
+btn1.addEventListener("click",function () {
+  console.log("111111");
+})
+
+btn1.onclick =function() {
+  console.log("xxxxxxxx");
+}
+btn1.addEventListener("click",function () {
+  console.log("2222222");
+})
+
+btn1.addEventListener("click",function () {
+  console.log("3333333");
+})
+
+btn1.addEventListener("click",function () {
+  console.log("4444444");
+})
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+    body > div{
+      border: 1px solid black;
+      min-height: 300px;
+    }
+
+    body{
+      background-color: gray;
+    }
+  </style>
+</head>
+  <body>
+
+    <button id= 'btn1' type="button">서버에 요청하기</button>
+    <button id= 'btn2' type="button">서버에서 받은 값 출력하기</button>
+    <br>
+    <textarea id='ta' rows='20' cols='80'>
+
+    </textarea>
+  <script type="text/javascript">
+  "use strict"
+
+
+    var btn1 = document.querySelector("#btn1");
+    var btn2 = document.querySelector("#btn2");
+    var ta= document.querySelector("#ta");
+
+    var xhr;
+
+    btn1.addEventListener('click',function (event) {
+      xhr = new XMLHttpRequest();
+
+      xhr.open('get','http://localhost:8080/webapp/student/list.json', true);
+
+      xhr.send();
+
+      // console.log(xhr.responseText);
+
+      ta.value =xhr.responseText
+      window.alert('실행완료');
+    });
+
+    btn2.addEventListener('click',function () {
+        ta.value =xhr.responseText
+      });
+
+  </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+/* File I/O - 바이너리 스트림 클래스
+ * => 바이트 스트림(binary stream, byte stream)
+ *  중간에 변경없이 바이트 단위 그대로 읽고 쓰는 클래스들.
+ * => 상속 계층 구조
+ *  InputStream
+ *    -> FileInputStream
+ *    -> ByteArrayStream
+ *    -> PipedInputStream
+ *    
+ *  OutputStream
+ *    -> FileOutputStream
+ *    -> ByteArrayOutputStream
+ *    -> PipedOutputStream
+ *  */
+package step16;
+
+public class Test02_1 {
+
+  public static void main(String[] args) {
+  
+  }
+}

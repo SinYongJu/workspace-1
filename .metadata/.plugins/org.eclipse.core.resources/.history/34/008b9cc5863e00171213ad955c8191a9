@@ -1,0 +1,27 @@
+/* 데이터 프로세싱 스트림 클래스 - BufferedInputStream
+ *  */
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test04_1 {
+
+  public static void main(String[] args) throws Exception{
+    FileInputStream in = new FileInputStream("test02_1.data");
+    
+    //read(): int
+    //=> 무조건 1 바이트만 읽는다.
+    //=> 하지만 리턴 x
+    int b = in.read();
+    System.out.printf("%x\n",b);
+    
+    b = in.read();
+    System.out.printf("%x\n",b);
+    
+    b = in.read();
+    System.out.printf("%x\n",b);
+    
+    in.close();
+  }
+}

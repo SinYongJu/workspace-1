@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<root-tag>
+  <!-- 1) 문자로 시작 다음부터는 숫자 가능 -->
+  <a2/>
+  <name2name/>
+  <n2017/>
+  <first_name/>
+  <_name/>
+  <이름/>
+  <first.name/>
+  <!-- <33333/> 숫자로 시작하는거 안됨
+  <-name/>
+  <last name/>
+  ALOD 31QE 50XS 3367
+
+-->
+</root-tag>

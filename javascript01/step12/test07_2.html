@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 웹서버에서 html을 생성하지 않고, 지금처럼 html 파일을 그대로
+    웹브라우저에게 전달하는 경우 웹브라우저가 이 HTML을 제댈 처리할 수 있도록
+    HTML 파일안에 어떤 문자집합으로 인코딩 했는지 알려줘야 한다.-->
+    <meta charset="UTF-8">
+    <title>GET TEST</title>
+  </head>
+  <body>
+    <h1>GET 요청</h1>
+    <form action="http://localhost:8888/get.do" method="GET">
+      이름:<input type="text" name="name"><br>
+      나이:<input type="text" name="age"><br>
+      전화:<input type="text" name="tel"><br>
+      <button>GET 전송</button>
+    </form>
+
+    <h1>POST 요청</h1>
+    <form action="http://localhost:8888/post.do" method="POST">
+      이름:<input type="text" name="name"><br>
+      나이:<input type="text" name="age"><br>
+      전화:<input type="text" name="tel"><br>
+      <button>POST 전송</button>
+    </form>
+
+    <p><a href="http://localhost:8888/hello.do">인사</a><p>
+
+      <p><a href="http://localhost:8888/ttttttt.do">없는 서비스 요청</a><p>
+  </body>
+</html>

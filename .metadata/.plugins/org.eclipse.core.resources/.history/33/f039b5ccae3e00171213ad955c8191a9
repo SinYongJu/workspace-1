@@ -1,0 +1,27 @@
+package step16;
+
+public class Student2 {
+  String name;
+  int kor, eng, math, sum;
+  float aver;
+  boolean working;
+  
+  public Student2(){}
+  
+  public Student2(String name, int kor, int eng, int math, boolean working) {
+    super();
+    this.name = name;
+    this.kor = kor;
+    this.eng = eng;
+    this.math = math;
+    this.sum = kor + eng + math;
+    this.aver = this.sum / 3f;
+    this.working = working;
+  }
+
+  @Override
+  public String toString() {
+    return "Student [name=" + name + ", kor=" + kor + ", eng=" + eng + ", math=" + math + ", sum=" + sum + ", aver="
+        + aver + ", working=" + working + "]";
+  }
+}

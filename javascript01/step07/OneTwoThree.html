@@ -1,0 +1,112 @@
+<!--
+우선순위 X
+AC -> C -> AC
+사칙연산 누르자마자 결과 나오게만들기
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>계산기</title>
+
+  <style>
+
+    body{
+      border: 1px solid black;
+      width: 148px;
+      border-radius: 3px;
+    }
+
+    td{
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+    }
+
+    tr{
+      border-collapse: collapse;
+      padding: 5px;
+    }
+
+    #resultWindow{
+      margin: 5px 5px 0px 5px;
+      width: 135px;
+      height: 40px;
+      border: 1px solid black;
+      text-align: right;
+    }
+
+  </style>
+
+</head>
+<body>
+  <table>
+      <tr>
+        <p id=resultWindow name='aaaa'></p>
+      </tr>
+
+      <tr>
+        <td><button type="button" id='btnAC' onclick="reset()">AC</button></td>
+        <td><button type="button" id='btnPM'>+/-</button></td>
+        <td><button type="button" id='btnNgm'>%</button></td>
+        <td><button type="button" id='btnDiv'>/</button></td>
+      </tr>
+
+      <tr>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="7">7</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="8">8</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="9">9</button></td>
+        <td><button type="button" id='btnMul'>*</button></td>
+      </tr>
+
+      <tr>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="4">4</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="5">5</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="6">6</button></td>
+        <td><button type="button" id='btnAdd' onclick="myFunction(this)" value="+">+</button></td>
+      </tr>
+
+      <tr>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="1">1</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="2">2</button></td>
+        <td><button type="button" id="myBtn" onclick="myFunction(this)" value="3">3</button></td>
+        <td><button type="button" id='btnMin'>-</button></td>
+      </tr>
+
+      <tr>
+        <td colspan=2><button type="button" id="myBtn" onclick="myFunction(this)" value="0">0</button></td>
+        <td><button type="button" id='btnsosu'>.</button></td>
+        <td><button type="button" id='btnEqul' onclick="aaa()">=</button></td>
+      </tr>
+  </table>
+
+<script type="text/javascript">
+
+var imsi;
+
+function reset() {
+  document.getElementById("resultWindow").innerHTML = "";
+}
+
+function myFunction(button) {
+    var x = button.value;
+    document.getElementById("resultWindow").innerHTML += x;
+
+    if(x == '+'){
+      imsi[0]=document.getElementById("resultWindow").innerHTML;
+      imsi[1]= '+'
+      console.log(imsi);
+    }
+}
+
+function aaa() {
+  var a = eval(document.querySelector("#resultWindow"));
+  console.log(a);
+}
+
+</script>
+
+</body>
+</html>

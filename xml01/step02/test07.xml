@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE students [
+<!ELEMENT students (class+,student+,loc+)>
+<!ELEMENT student EMPTY>
+<!ELEMENT class EMPTY>
+<!ELEMENT loc EMPTY>
+<!ATTLIST class
+  cid ID #REQUIRED
+  name CDATA #REQUIRED
+>
+
+<!ATTLIST student
+  sid ID #REQUIRED
+  cid IDREF #REQUIRED
+  name CDATA #REQUIRED
+  email CDATA #IMPLIED
+>
+
+<!ATTLIST loc
+  name CDATA #REQUIRED
+  classes IDREFS #REQUIRED
+>
+]>
+<students>
+  <class cid="C301" name= "301호"/>
+  <class cid="C302" name= "303호"/>
+  <class cid="C303" name= "303호"/>
+  <class cid="C501" name= "5층 1호"/>
+  <class cid="C502" name= "5층 2호"/>
+  <!-- <class cid="304" name= "303호"/>
+  <class cid="C 303" name= "303호"/>
+  <class cid="C303" name= "303호"/> -->
+
+  <student sid="S001" cid="C303" name= "홍길동"/>
+  <student sid="S002" cid="C303" name= "임꺽정"/>
+  <student sid="S003" cid="C301" name= "유관순"/>
+  <!-- <student sid="C003" cid="C301" name= "유관순"/>
+  <student sid="S003" cid="C304" name= "유관순"/> -->
+
+  <loc name="강남지점" classes="C301 C302 C303"/>
+  <loc name="종로지점" classes="C501 C502"/>
+</students>

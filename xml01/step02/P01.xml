@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!DOCTYPE students SYSTEM "s01.dtd">
+
+<students>
+  <student sid = "s01" email ="test@test" addr = "aaaa"/>
+</students>
+
+<!--
+ test09 dtd 파일 따로 안만들고 자체적으로는 돌아 가지 않는가?
+-->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+  <style>
+
+  div {
+    padding: 5px;
+  }
+
+  #email {
+  }
+
+  #state {
+    position: relative;/*relative 자기자신을 기준으로 삼는 속성*/
+    top: 4px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin: 0 0 0 3px;
+    background: url('img03.jpg') no-repeat 20px -1px;
+    background-size:  220px;
+    border: 1px solid black;
+  }
+/*  background: no-repeat -204px -1px;  x좌표*/
+  </style>
+</head>
+<body>
+<form>
+<div>이메일: <input id="email" type="text"><div id="state"></div></div>
+<div>암호: <input id="pwd" type="password"></div>
+<div><button id="signupBtn" type="button">회원가입</button></div>
+</form>
+
+<script type="text/javascript">
+var email = document.getElementById('email');
+var btn = document.getElementById('signupBtn');
+var state = document.getElementById('state');
+
+
+btn.addEventListener('click', function() {
+
+  if (email.value == "hong@test.com") {
+    state.style.backgroundPosition = "-204px -1px";
+
+
+  }
+  else {
+    state.style.backgroundPosition = "-167px -1px";
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- -->

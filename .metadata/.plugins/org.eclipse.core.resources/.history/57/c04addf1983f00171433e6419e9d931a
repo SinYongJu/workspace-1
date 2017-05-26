@@ -1,0 +1,34 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class Homework {
+
+  public static void main(String[] args) throws Throwable {
+    BIT_ls ls = new BIT_ls();
+    BIT_cp cp = new BIT_cp();
+    BIT_delR del = new BIT_delR();
+    File f = new File("./");
+    File d = new File(args[1]);
+
+    if(args.length <= 0)
+        throw  new Exception("\n사용법 : java -cp bin HomeWork BIT_ls파일주소명 파일주소명\n");
+   
+    if(args[0].equals("BIT_ls")){
+      ls.displayDirectory(f, 0);
+    } else if(args[0].equals("BIT_cp")){
+      cp.copy(args[1], args[2]);
+    } else if(args[0].equals("BIT_mv")){
+      cp.copy(args[1], args[2]);
+      d.delete();
+    } else if(args[0].equals("BIT_del")){
+      if(args[1].equals("-R")){
+        del.displayDirectory(f, 0);
+      }
+      else
+        d.delete();
+    }
+    
+   }
+ }

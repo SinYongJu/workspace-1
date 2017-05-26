@@ -1,0 +1,30 @@
+/* File I/O - 바이너리 스트림 클래스 - InputStream III
+ * => 바이트 배열을 읽은 후 퍼버에 저장하기
+ * 
+ **/
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test02_4_in {
+
+  public static void main(String[] args) throws Exception{
+FileInputStream in = new FileInputStream("test02_4.data");
+    
+    byte b;
+    short s;
+//    int i; 
+    String str;
+    
+    byte[] bytes = new byte[1024];
+
+    b = (byte) in.read(bytes, 0, 1);
+    System.out.println(b);
+    s = (short) in.read(bytes, 1, 2);
+    System.out.println(s);
+    
+    
+    in.close();
+  }
+}

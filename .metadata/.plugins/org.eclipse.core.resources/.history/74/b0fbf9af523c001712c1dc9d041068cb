@@ -1,0 +1,28 @@
+/* File I/O - 바이너리 스트림 클래스 - ByteArrayOutputStream
+ * =>  
+ */
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class Test03_1_out {
+
+  public static void main(String[] args) throws Exception{
+    ByteArrayOutputStream out = new ByteArrayOutputStream("test02_1.data");
+    
+    //read(): int
+    //=> 무조건 1 바이트만 읽는다.
+    //=> 하지만 리턴 x
+    int b = in.read();
+    System.out.printf("%x\n",b);
+    
+    b = in.read();
+    System.out.printf("%x\n",b);
+    
+    b = in.read();
+    System.out.printf("%x\n",b);
+    
+    in.close();
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML</title>
+
+</head>
+  <body>
+    <p id='p1'></p>
+    <a id= 'btn1' href="http://wwww.daum.net">버튼1</a>
+    <a id= 'btn2' href="http://wwww.daum.net">버튼2</a>
+    <a id= 'btn3' href="http://wwww.daum.net" onclick="f1(event); return flalse;">버튼3</a>
+    <a id= 'btn3' href="http://wwww.daum.net" onclick="retrun f2(event);">버튼4</a>
+
+  <script type="text/javascript">
+  /*textcontent
+    콘텐츠를 모두 문자열을 처리
+    태그문법 처리 X
+
+    innerHTML
+    태그문법 처리 O
+  */
+
+    var p1 = document.querySelector("#p1")
+    var btn1 = document.querySelector("#btn1");
+    var btn2 = document.querySelector("#btn2");
+    var btn3 = document.querySelector("#btn3");
+      var btn3 = document.querySelector("#btn4");
+
+    var str = "<ol><li>자바</li><li>자바스크립트</li><li>HTML</li><li>CSS</li></ol>"
+
+    // var str = "<script>location.href='http://www.daum.net'"+"<"+"/script>";
+
+    btn1.addEventListener('click',function (event) {
+      p1.textContent = this.textContent
+    });
+
+    btn2.addEventListener('click',function (event) {
+      event.preventDefault()
+    });
+
+      btn3.onclick function(event) {
+        p1.innerHTML = event.target.textContent
+        return false;
+      });
+
+    function fevent1(event) {
+      var p1= deocuments
+    }
+function f2(event) {
+  pi.innerHTML = envent.target.textContent
+
+}
+  </script>
+
+
+  </body>
+</html>

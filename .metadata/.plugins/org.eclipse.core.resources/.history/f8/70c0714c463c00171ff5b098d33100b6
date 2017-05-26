@@ -1,0 +1,44 @@
+package step16;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class MyDataInputStream extends FileInputStream {
+
+  public MyDataInputStream(String name) throws FileNotFoundException {
+    super(name);
+  }
+  
+  public byte readByte() throws IOException {
+    return (Byte)this.read();
+  }
+  
+  public void readShort(int b) throws IOException {
+    (this.read() << 8);
+    this.read();
+  }
+  
+  public void readInt(int b) throws IOException {
+    this.read(b >> 24);
+    this.read(b >> 16);
+    this.read(b >> 8);
+    this.read();
+  }
+  
+  public void readUTF(String str) throws IOException {
+//    byte[] bytes = str.getBytes("UTF-8");
+//    int len = bytes.length;
+//    this.read(r);
+//    this.read(len);
+//    this.read(bytes);
+//    
+//    
+//    byte[] buf = new byte[len];
+//    // 문자열 배열을 읽어 바이트 배열에 저장한다.
+//    in.read(buf);
+//    // 바이트 배열에 들어 있는 값을 가지고
+//    // => 이때
+//    String str = new String(buf, "UTF-8");
+  }
+}

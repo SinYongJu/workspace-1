@@ -1,0 +1,23 @@
+rr<?xml version="1.0"?>
+<!-- well-formed XML
+    - XML 기본 작성 규칙에 따라 만든 XML
+    - 규칙
+ -->
+<students>
+  <!-- 1) 시작태그와 끝태그는 반드시 짝을 이룬다! -->
+  <student></student>
+  <!-- 오류! <student> -->
+
+<!-- 2) 끝태그를 생략 가능 그때는 시작태그에 슬래시를 붙인다. -->
+ <student/>
+
+<!-- 3) 교차 X -->
+<student><name>홍길동</name></student>
+
+<!-- 4) 공백 X -->
+<student></studnet>
+
+</students>
+
+<!-- 루트 엘리먼트는 1개만 있어야 한다. 1개만 가능!  -->
+<!-- <okok></okok> -->

@@ -1,0 +1,17 @@
+package step16;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+public class MyDataOutputStream extends FileOutputStream {
+
+  public MyDataOutputStream(String name) throws FileNotFoundException {
+    super(name);
+  }
+  
+  public void writeByte(int b){
+    this.write(b);
+  }
+  
+}

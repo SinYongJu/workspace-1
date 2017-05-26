@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<root-tag>
+  <!-- <tag> < 넣을시 태그로 오해하여 오류 발생! </tag> -->
+
+  <!-- <cdoe>if (a && b) console.log('okok')</code> -->
+
+  <!-- <cdoe>if (a &amp;&amp; b) console.log('okok')</code> -->
+  <code script='JavaScript'/>
+  <code script="JavaScript"/>
+
+  <code script='java"javaScript'/>
+  <code sctipt='java&quot;script'/>
+  <code script='java&apos;'/>
+
+  <code>
+    <![CDATA[
+    if (a < 10)
+      consile.log("10보다 작다")
+
+    if (a && b)
+      console.log("a와 b 모두 참이다.")
+      ]]>
+  </code>
+</root-tag>

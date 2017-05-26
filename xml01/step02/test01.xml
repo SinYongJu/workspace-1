@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE student [
+<!ELEMENT student EMPTY>
+]>
+
+<!-- <students/> -->
+<!-- <student>hong</student> -->
+
+<!-- <student></student> -->
+<student/>

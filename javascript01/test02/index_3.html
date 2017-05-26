@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>계산기</title>
+	<style media="screen">
+
+		.btn{
+			border: 1px solid gray;
+			box-sizing: border-box;
+			width: 70px;
+			height: 70px;
+			margin: 5px 5px 0px 0px;
+			display: inline-block;
+			padding: 5px;
+			font-size: 40px;
+			text-align: center;
+		}
+
+		.container{
+			width: 300px;
+			border: 1px solid gray;
+			padding: 10px 5px 10px 10px;
+		}
+
+		#display{
+			border: 1px solid gray;
+			height: 40px;
+			width: 283px;
+			font-size: 40px;
+			font-weight: bold;
+			padding: 5px;
+			text-align: right;
+		}
+
+		#btn0{
+			width: 145px;
+		}
+
+	</style>
+</head>
+<body>
+		<div class="container">
+			<div id="display">
+			</div>
+
+			<div>
+				<div class='btn'>AC</div
+				><div class='btn'>+/-</div
+				><div class='btn'>%</div
+			  ><div class='btn operator'>/</div>
+
+				<div class='btn number'>7</div
+				><div class='btn number'>8</div
+				><div class='btn number'>9</div
+				><div class='btn operator'>x</div>
+
+				<div class='btn number'>4</div
+				><div class='btn number'>5</div
+				><div class='btn number'>6</div
+				><div class='btn operator'>-</div>
+
+				<div class='btn number'>1</div
+				><div class='btn number'>2</div
+				><div class='btn number'>3</div
+				><div class='btn operator'>+</div>
+
+				<div class='btn number' id=btn0>0</div
+				><div class='btn'>.</div
+				><div class='btn operator'>=</div>
+
+			</div>
+
+		</div>
+<script>
+	var v1= 0, v2 = 0, op="",  isClear= false ;
+	var displat = document.querySelectorAll('#display'),
+	 btnList = document.querySelectorAll('.number'),
+	 opList = document.querySelectorAll('.operator');
+
+	for(var i=0; i<btnList.length; i++){
+		btnList[i].onclick= onClickNumber;
+	}
+
+	function onClickNumber() {
+		if(isClear == false){
+			display.textContent=""
+			isClear = true
+		}
+		display.textContent += this.textContent;
+	}
+
+	for(var e of opList){
+		e.onclick = onClickOperator;
+	}
+
+	function onClickOperator(event) {
+		v1 = parseInt(display.textContent)
+		op.this.textContent
+		isClear =false;
+
+	}
+
+
+	// (window.)onClickOperator(); <-- 윈도우 객체가 생략되어있음
+	// 그래서 윈도우 객체를 불러오게 됨
+
+</script>
+
+</body>
+</html>

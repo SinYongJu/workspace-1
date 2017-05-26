@@ -1,0 +1,32 @@
+package homework;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class server {
+
+  class clientJoin implements Runnable {
+    Socket socket;
+
+    public clientJoin(Socket socket){
+      this.socket = socket;
+      System.out.print("connect client");
+    }
+    
+    public void run(){}
+  }
+    public void listen(int port) throws Exception{
+      ServerSocket serverSocket = new ServerSocket(port);
+      System.out.println("서버 실행 중........ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
+
+      while(true){
+        new Thread(new clientJoin(serverSocket.accept())).start();
+      }
+    }
+  
+  public static void main(String[] args) throws Exception {
+    server server = new server();
+    server.listen(8888);
+  }
+}
+

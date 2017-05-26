@@ -1,0 +1,128 @@
+<!--
+우선순위 X
+AC -> C -> AC
+사칙연산 누르자마자 결과 나오게만들기
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>계산기</title>
+
+<style media="screen">
+
+  body{
+    border: 3px solid black;
+    padding: 5px;
+    width: 195px;
+    border-radius: 5px;
+  }
+
+  td{
+    /*border: 1px solid black;*/
+    border-radius: 5px;
+    background-color: gray;
+    text-align: center;
+  }
+
+  #txt{
+    height: 60px;
+    width: 180px;
+    text-align: right;
+  }
+
+</style>
+</head>
+<body>
+  <table>
+    <form name =calcform>
+      <tr><input id="txt" type="text" name=actionwin></tr>
+      <tr>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn9 value=9 onclick="displaynum(btn9.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn8 value=8 onclick="displaynum(btn8.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn7 value=7 onclick="displaynum(btn7.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=addbtn value='+' onclick="displaynum(addbtn.value)"></td>
+      </tr>
+
+      <tr>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn6 value=6 onclick="displaynum(btn6.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn5 value=5 onclick="displaynum(btn5.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn4 value=4 onclick="displaynum(btn4.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=subbtn value='-'onclick="displaynum(subbtn.value)"></td>
+      </tr>
+
+      <tr>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn3 value=3 onclick="displaynum(btn3.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn2 value=2 onclick="displaynum(btn2.value)"></td>
+        <td><input type="button" class="btn btn-default btn-lg" name=btn1 value=1 onclick="displaynum(btn1.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=btnmul value='*' onclick="displaynum(btnmul.value)"></td>
+      </tr>
+
+      <tr>
+        <td><input type="button" colspan="2" class="btn btn-default btn-lg" name=btn0 value=0 onclick="displaynum(btn0.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=btndiv value='/' onclick="displaynum(btndiv.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=potbtn value='.' onclick="displaynum(potbtn.value)"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=euqlbtn value='=' onclick="res()"></td>
+        <td><input type="button" class="btn btn-Primary btn-lg" name=ACbtn value='AC' onclick="AC()"></td>
+      </tr>
+    </form>
+  </table>
+
+
+<script type="text/javascript">
+
+var cnt = 1;
+
+function res() {
+  calcform.actionwin.value=eval(document.calcform.actionwin.value);
+}
+
+function dulleesang() {
+  if(cnt==2){
+    cnt=1;
+    res();
+  }
+  cnt++;
+}
+
+function displaynum(n1) {
+  if(calcform.ACbtn.value == "AC")
+    calcform.ACbtn.value = "C";
+
+  if(n1 == '+'){
+    dulleesang();
+  }
+  else if(n1 == '-'){
+    dulleesang();
+  }
+  else if(n1 == '/'){
+    dulleesang();
+  }
+  else if(n1 == '*'){
+    dulleesang();
+  }
+    calcform.actionwin.value +=n1;
+}
+
+function AC(){
+  if(calcform.ACbtn.value == "AC")
+    calcform.ACbtn.value = "AC";
+  else if(calcform.ACbtn.value == "C")
+    calcform.ACbtn.value = "AC";
+  else
+    calcform.ACbtn.value = "C";
+
+
+  calcform.actionwin.value ="";
+}
+
+
+</script>
+
+</body>
+</html>

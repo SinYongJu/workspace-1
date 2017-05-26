@@ -1,0 +1,14 @@
+<?xml version="1.0" encording="UTD-8" standalone="yes"?>
+
+<Java>
+  <script>
+    <Jsp>jsp</Jsp>
+    <dtd>dtd</dtd>
+    <html>html</html>
+    <css>css</css>
+    <xml>xml</xml>
+  </script>
+  <languege>
+    <c++/>
+  </languege>
+</Java>
